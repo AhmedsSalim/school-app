@@ -1,4 +1,20 @@
         <!-- Navbar Start -->
+        <div class="container  pt-2">
+            <div class="row">
+              <div class="col-md-4 "> 
+                <p class="mb-2 ms-5"><i class="fa fa-phone-alt me-3 text-primary"></i>+97137806780</p>
+              </div>
+        
+              <div class="col-md-4 text-center">
+                <a href="mailto:firstlebanon1981@yahoo.com" class="mb-2 ms-5 text-secondary">firstlebanon1981@yahoo.com <i class="fas fa-envelope ms-3 text-primary"></i></a>
+              </div>
+        
+              <div class="col-md-4 d-flex justify-content-end"> 
+                <p class="mb-2 me-5">العين - فلج هزاع - شارع المدارس<i class="fa fa-map-marker-alt ms-3 text-primary"></i></p>
+              </div>
+            </div>
+          </div>
+        <hr class="m-auto">
         <nav  class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
                 <h1 class="m-0 text-primary"><img src="img/First Lebanon School.jpeg" width="100px" height="100px" alt=""></i>First Lebanon School</h1>

@@ -458,20 +458,20 @@ h6,
     display: block;
     margin-bottom: 5px;
     padding: 0;
-    text-align: left;
+    text-align: right;
     font-size: 16px;
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
 }
 
-.footer .btn.btn-link::before {
+/* .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 10px;
-}
+} */
 
 .footer .btn.btn-link:hover {
     color: var(--primary) !important;
