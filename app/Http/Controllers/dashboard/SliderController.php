@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Slide;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
-class SlidesController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class SlidesController extends Controller
      */
     public function index()
     {
-        return view('dashboard/index');
+        $sliders = Slider::all();
+        return view('dashboard.Pages.Slider.index' , compact('sliders'));
     }
 
     /**
@@ -42,10 +43,10 @@ class SlidesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Slide  $slide
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Slide $slide)
+    public function show($id)
     {
         //
     }
@@ -53,10 +54,10 @@ class SlidesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Slide  $slide
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slide $slide)
+    public function edit($id)
     {
         //
     }
@@ -65,10 +66,10 @@ class SlidesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Slide  $slide
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slide $slide)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +77,10 @@ class SlidesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Slide  $slide
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slide $slide)
+    public function destroy($id)
     {
         //
     }

@@ -10,13 +10,13 @@
                     <img class="img-fluid" src="img/لبنان2.jpg" alt="" >
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
                         <div class="container" >
-                            <div class="row justify-content-start" >
+                            <div class="row justify-content-center" >
                                 <div class="col-10 col-lg-8" >
                                     <h1 class="display-2 text-white animated slideInDown mb-4">مرحبا بكم في مدرسة لبنان الخاصه</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">
                                         إذا كنت تبحث عن مدرسة توفر لطفلك تعليمًا عالي الجودة، فنحن ندعوك للانضمام إلى مجتمعنا</p>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
-                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a>
+                                    {{-- <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
+                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a> --}}
                                 </div>
                             </div>
                         </div>

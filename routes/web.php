@@ -14,6 +14,8 @@ use  App\Http\Controllers\dashboard;
 |
 */
 
+require __DIR__.'/dashboard.php';
+
 Route::get('/', function () {
     return view('website.home');
 });
@@ -23,7 +25,6 @@ Route::get('/', function () {
 // });
 
   //Route::get('/slide', 'dashboard\SlideController@index');
- Route::get('/slide', [dashboard\SlidesController::class, 'index']);
 
 Route::get('/dashboard' , function(){
     return view('dashboard.empty');

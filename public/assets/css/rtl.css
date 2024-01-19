@@ -82,7 +82,15 @@ html {
   -ms-overflow-style: scrollbar;
     direction: rtl;
   -webkit-tap-highlight-color: transparent; }
-
+  
+  *{
+    font-family: "Cairo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
 @-ms-viewport {
   width: device-width; }
 

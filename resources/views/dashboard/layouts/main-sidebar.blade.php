@@ -50,7 +50,7 @@
                     </li>  --}}
                     <!-- menu item todo-->
                     <li>
-                        <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">شريط التمرير</span> </a>
+                        <a href="{{route('slider.index')}}"><i class="ti-menu-alt"></i><span class="right-nav-text">شريط التمرير</span> </a>
                     </li>
                     <!-- menu item chat-->
                     {{-- <li>

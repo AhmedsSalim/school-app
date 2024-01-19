@@ -8,21 +8,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
-                    <a href="classes.html" class="nav-item nav-link">Classes</a>
+                    <a href="index.html" class="nav-item nav-link active">الرئيسية</a>
+                    <a href="about.html" class="nav-item nav-link">عن المدرسة</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">القبول و التسجيل</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="facility.html" class="dropdown-item">School Facilities</a>
-                            <a href="team.html" class="dropdown-item">Popular Teachers</a>
-                            <a href="call-to-action.html" class="dropdown-item">Become A Teachers</a>
-                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="facility.html" class="dropdown-item">سياسة القبول</a>
+                            <a href="team.html" class="dropdown-item">الرسوم المدرسية</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">اكاديمي</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="facility.html" class="dropdown-item">المنهج الدراسي</a>
+                            <a href="team.html" class="dropdown-item">الإمتحانات الخارجية</a>
+                            <a href="team.html" class="dropdown-item">المرافق المدرسية و البيئية</a>
+                            <a href="team.html" class="dropdown-item">التخطيط الإستراتيجي</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">الحياه الطلابية</a>
+                    <a href="contact.html" class="nav-item nav-link">اتصل بنا</a>
                 </div>
                 <a href="{{url('/dashboard')}}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">login<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
