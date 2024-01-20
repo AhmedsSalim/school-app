@@ -24,48 +24,50 @@
 @endsection
 @section('content')
 <!-- row -->
-<div class="row">
-    <div class="col-md-12 mb-30">
-        <div class="card card-statistics h-100">
-            <div class="card-body">
-                <p>الصفحه الرئيسيه<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-30">
+            <div class="card card-statistics h-100">
+                <div class="card-body">
+                    <p>الصفحه الرئيسيه<br><br>
+                    
+                      
+                        <a class="btn btn-primary" href="#" role="button">اضافه جديده</a>
+    
+                    <br>
+                    </p>
                 
-                  
-                    <a class="btn btn-primary" href="#" role="button">اضافه جديده</a>
-
-                <br>
-                </p>
-            
-            
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">الجمله الاولي</th>
-                        <th scope="col">الجمله الثانيه</th>
-                        <th scope="col">الصور</th>
-                        <th scope="col">العمليات</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>مرحبا بكم في مدرسة لبنان الخاصه</td>
-                        <td>إذا كنت تبحث عن مدرسة توفر لطفلك تعليمًا عالي الجودة، فنحن ندعوك للانضمام إلى مجتمعنا</td>
-                        <td><img src="img/لبنان2.jpg" alt="" style="width: 100px;
-                            height: 50px;
-                            border-radius: 20%;
-                        }"></td>
-                        <td>
-                            <a class="btn btn-success" href="#" role="button">تعديل</a>
-                            <a class="btn btn-danger" href="#" role="button">حذف</a>
-                        
-                        </td>
-                      </tr>
-                     
-                    </tbody>
-                  </table>
-            
+                
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">الجمله الاولي</th>
+                            <th scope="col">الجمله الثانيه</th>
+                            <th scope="col">الصور</th>
+                            <th scope="col">العمليات</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>مرحبا بكم في مدرسة لبنان الخاصه</td>
+                            <td>إذا كنت تبحث عن مدرسة توفر لطفلك تعليمًا عالي الجودة، فنحن ندعوك للانضمام إلى مجتمعنا</td>
+                            <td><img src="img/لبنان2.jpg" alt="" style="width: 100px;
+                                height: 50px;
+                                border-radius: 20%;
+                            }"></td>
+                            <td>
+                                <a class="btn btn-success" href="#" role="button">تعديل</a>
+                                <a class="btn btn-danger" href="#" role="button">حذف</a>
+                            
+                            </td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                
+                </div>
             </div>
         </div>
     </div>

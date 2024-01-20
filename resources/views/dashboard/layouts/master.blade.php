@@ -9,21 +9,17 @@
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     @include('dashboard.layouts.head')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body>
 
     <div class="wrapper">
 
-        <!--=================================
- preloader -->
-
         <div id="pre-loader">
             <img src="assets/images/pre-loader/loader-01.svg" alt="">
         </div>
-
-        <!--=================================
- preloader -->
 
         @include('dashboard.layouts.main-header')
 
@@ -48,7 +44,7 @@
         </div><!-- main content wrapper end-->
     </div>
     </div>
-    </div>
+
 
     <!--=================================
  footer -->
