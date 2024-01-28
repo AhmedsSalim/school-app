@@ -22,7 +22,10 @@ require __DIR__.'/dashboard.php';
 Route::get('/', function () {
     return view('website.home');
 });
-Route::get('/about' , [AboutSchoolController::class , 'index'])->name('about.index');
+
+Route::prefix('about')->controller(AboutSchoolController::class)->group(function(){
+    Route::get('/principal-message' ,  'indexPrincipalMessage')->name('principal-message.index');
+});
 Route::prefix('admission')->controller(AdmissionController::class)->group(function () {
     Route::get('/policy', 'indexPolicy')->name('policy.index');
     Route::get('/School-fees', 'indexSchoolFees')->name('school-fees.index');

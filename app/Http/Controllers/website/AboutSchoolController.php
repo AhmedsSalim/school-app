@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AboutSchoolController extends Controller
 {
-    public function index(){
-        return view('website.pages.about-school');
+    public function indexPrincipalMessage(){
+        return view('website.pages.about.principal-message');
     }
 }

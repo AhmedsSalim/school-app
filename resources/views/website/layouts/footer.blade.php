@@ -16,7 +16,6 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <h3 class="text-white mb-4">روابط سريعة</h3>
-                        <a class="btn btn-link text-right text-white-50" href="{{route('about.index')}}"> <i class="fas fa-caret-left"></i> عن المدرسة</a>
                         <a class="btn btn-link text-right text-white-50" href="{{route('school-fees.index')}}"> <i class="fas fa-caret-left"></i> الرسوم المدرسية</a>
                         <a class="btn btn-link text-right text-white-50" href="{{route('learning-environment.index')}}"> <i class="fas fa-caret-left"></i> المنهج الدراسي</a>
                         <a class="btn btn-link text-right text-white-50" href="{{route('student-life.index')}}"> <i class="fas fa-caret-left"></i> الحياه الطلابية</a>
