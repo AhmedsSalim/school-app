@@ -1,9 +1,4 @@
 @extends('website.layouts.app')
-@section('styles')
-    <style>
-        
-    </style>
-@endsection
 @section('content')
     <div class="container">
         <div dir="rtl" class="row justify-content-center align-items-center g-2">
