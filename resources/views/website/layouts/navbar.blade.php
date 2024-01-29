@@ -16,7 +16,7 @@
           </div>
         <hr class="m-auto">
         <nav  class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
-            <a href="index.html" class="navbar-brand">
+            <a href="{{route('home')}}" class="navbar-brand">
                 <h1 class="m-0 text-primary"><img src="{{asset('img/First Lebanon School.jpeg')}}" width="100px" height="100px" alt=""></i>First Lebanon School</h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -24,7 +24,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link active">الرئيسية</a>
+                    <a href="{{route('home')}}" class="nav-item nav-link active">الرئيسية</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">عن المدرسة</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">

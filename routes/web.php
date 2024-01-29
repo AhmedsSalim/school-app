@@ -21,7 +21,7 @@ require __DIR__.'/dashboard.php';
 
 Route::get('/', function () {
     return view('website.home');
-});
+})->name('home');
 
 Route::prefix('about')->controller(AboutSchoolController::class)->group(function(){
     Route::get('/principal-message' ,  'indexPrincipalMessage')->name('principal-message.index');
