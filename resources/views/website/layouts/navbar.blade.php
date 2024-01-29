@@ -46,6 +46,7 @@
                             <a href="{{route('planning.index')}}" class="dropdown-item">التخطيط الإستراتيجي</a>
                         </div>
                     </div>
+                    <a href="{{route('images-page.index')}}" class="nav-item nav-link {{ Request::is('images-page') ? 'active' : '' }}">معرض الصور</a>
                     <a href="{{route('student-life.index')}}" class="nav-item nav-link {{ Request::is('student-life') ? 'active' : '' }}">الحياه الطلابية</a>
                     <a href="{{route('contact.index')}}" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">اتصل بنا</a>
                 </div>

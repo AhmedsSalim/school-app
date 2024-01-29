@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\website\ImagesPageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\website\AboutSchoolController;
 use App\Http\Controllers\website\AdmissionController;
@@ -37,6 +38,7 @@ Route::prefix('academics')->controller(AcademicsController::class)->group(functi
     Route::get('/planning', 'indexPlanning')->name('planning.index');
 });
 
+Route::get('/images-page' , [ImagesPageController::class , 'index'])->name('images-page.index');
 Route::get('/student-life' , [StudentLifeController::class , 'index'])->name('student-life.index');
 Route::get('/contact' , [ContactController::class , 'index'])->name('contact.index');
 
