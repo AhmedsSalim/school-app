@@ -26,9 +26,10 @@
                 <div class="navbar-nav mx-auto">
                     <a href="{{route('home')}}" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">الرئيسية</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle {{ Request::is('about/principal-message') ? 'active' : '' }}" data-bs-toggle="dropdown">عن المدرسة</a>
+                        <a href="#" class="nav-link dropdown-toggle {{ Request::is('about/principal-message') || Request::is('about/vision-and-mission') ? 'active' : '' }}" data-bs-toggle="dropdown">عن المدرسة</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
                             <a href="{{route('principal-message.index')}}" class="dropdown-item">رسالة المدير</a>
+                            <a href="{{route('vision-and-mission.index')}}" class="dropdown-item">الرؤية و الرسالة</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">

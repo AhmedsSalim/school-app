@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 Route::prefix('about')->controller(AboutSchoolController::class)->group(function(){
     Route::get('/principal-message' ,  'indexPrincipalMessage')->name('principal-message.index');
+    Route::get('/vision-and-mission' ,  'indexVisionMndMission')->name('vision-and-mission.index');
 });
 Route::prefix('admission')->controller(AdmissionController::class)->group(function () {
     Route::get('/policy', 'indexPolicy')->name('policy.index');

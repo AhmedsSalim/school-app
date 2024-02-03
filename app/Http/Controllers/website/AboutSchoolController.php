@@ -10,4 +10,8 @@ class AboutSchoolController extends Controller
     public function indexPrincipalMessage(){
         return view('website.pages.about.principal-message');
     }
+
+    public function indexVisionMndMission(){
+        return view('website.pages.about.vision-and-mission');
+    }
 }
