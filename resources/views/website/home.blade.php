@@ -1,7 +1,9 @@
 @extends('website.layouts.app')
 @section('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css">
-    <style>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<style>
     .cover {
         background: url("{{asset('img/لبنان2.jpg')}}") center/cover no-repeat;
         background: cover;
@@ -12,15 +14,15 @@
     }
 
     .cover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5); /* لون أسود مع شفافية 50% */
-    z-index: 1; /* يضمن أن يظهر فوق الصورة */
-}
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5); /* لون أسود مع شفافية 50% */
+        z-index: 1; /* يضمن أن يظهر فوق الصورة */
+    }
     .cover .card {
         position: absolute;
         bottom: -30%;
@@ -35,7 +37,52 @@
         font-style: normal;
         
     }
-    </style>
+</style>
+
+    <style>
+    /* Styles for the slider container */
+    #container-slider{
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Styles for the carousel container */
+    #carousel {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Styles for the carousel items */
+    #carousel img {
+        margin: 0 10px; /* Add space between items */
+        transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+    }
+
+    /* Styles for the prev and next links */
+    #prev,
+    #next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    #prev {
+        left: 10px;
+
+    }
+
+    #next {
+        right: 10px;
+
+    }
+</style>
+
+
 @endsection
 @section('content')
     {{-- Content --}}
@@ -169,6 +216,23 @@
             </div>
         </div>
         <!-- Number of Student End -->
+
+        <!-- Slider start -->
+        <div id="container-slider" class="container-xxl py-3">
+            <div class="container " >
+                <div id="carousel" style="height:500px"> 
+                    <img src="{{asset('img/classes-1.jpg')}}" style="border-radius: 10px;" width="400px" id="item-3" /> 
+                    <img src="{{asset('img/classes-2.jpg')}}" style="border-radius: 10px;" width="400px" id="item-4" /> 
+                    <img src="{{asset('img/classes-3.jpg')}}" style="border-radius: 10px;" width="400px" id="item-5" /> 
+                    <img src="{{asset('img/classes-4.jpg')}}" style="border-radius: 10px;" width="400px" id="item-6" /> 
+                    <img src="{{asset('img/classes-5.jpg')}}" style="border-radius: 10px;" width="400px" id="item-7" /> 
+                    <img src="{{asset('img/classes-6.jpg')}}" style="border-radius: 10px;" width="400px" id="item-8" /> 
+                </div>
+                <a href="#" class="text-primary" id="prev">السابق</a>
+                <a href="#" class="text-primary" id="next">التالى</a>
+            </div>
+        </div>
+        <!-- Slider End -->
 
         <!-- Facilities Start -->
         <div class="container-xxl py-5">
@@ -389,6 +453,7 @@
         </div>
         <!-- Testimonial End -->
 
+        
 
     {{-- End Content --}}
 @endsection
@@ -396,6 +461,33 @@
 @section('scripts')
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="{{asset('js/jquery.waterwheelCarousel.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function () {
+            var carousel = $("#carousel").waterwheelCarousel({
+                flankingItems: 3,
+            });
+            boxShadow();
+
+            $('#prev').bind('click', function () {
+                carousel.prev();
+                boxShadow();
+                return false
+            });
+
+            $('#next').bind('click', function () {
+                carousel.next();
+                boxShadow();
+                return false;
+            });
+        });
+
+        function boxShadow() {
+            $('img').filter('[style*="z-index: 5"]').css('box-shadow', '0 0 15px rgba(0, 0, 0, 0.3)');
+        }
+    </script>
 
     <script>
         var odometerElement1 = document.getElementById('countStudent');
