@@ -82,6 +82,410 @@
     }
 </style>
 
+{{-- <link type="text/css" rel="stylesheet/less" href="{{asset('scss/style.scss')}}"> --}}
+<link rel="stylesheet" href="https://unpkg.com/swiper@6.0.2/swiper-bundle.min.css">
+<style lang="scss">
+
+        $base-font			: 'Montserrat', sans-serif;
+        $base-color-font  : #fff;
+        $base-size-font   : 14px;
+        $base-weight-font	: 400;
+
+        .hide{display: none!important}
+
+        $primary-color 	: #ed1b28;
+        $secondary-color	: #2b2c36;
+
+        body{
+            margin: 0;
+            font-family: $base-font;
+            font-size: $base-size-font;
+            font-weight: $base-weight-font;
+            color: $base-color-font;
+            line-height: normal;
+            letter-spacing: normal
+        }
+
+        /*loader thx:https://codepen.io/aurer*/
+        .loader{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            background: darken($secondary-color, 12%);
+            background: linear-gradient(to left, darken($secondary-color, 8%), darken($secondary-color, 12%));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg path,
+            svg rect{
+                fill: $primary-color
+            }
+        }
+
+        /*gallery*/
+
+        .gallery-wrapper{
+            position: relative;
+            z-index: 1;
+
+            .content{
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 3vh 0;
+                background: darken($secondary-color, 12%);
+                background: linear-gradient(to left, darken($secondary-color, 8%), darken($secondary-color, 12%));
+
+
+
+                .gallery{
+                    &.full{
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+
+                        .swiper-container{
+                            .swiper-wrapper{
+                                display: flex;
+                                height: 80vh;
+                                align-items: center;
+                                
+                                .swiper-slide{
+                                    position: relative;
+                                    height: 50vh;
+                                    transition: all .4s ease-out;
+                                    box-sizing: border-box;
+                                    width: auto;
+                                    opacity: .25;
+
+                                    &.swiper-slide-prev,
+                                    &.swiper-slide-next{width: 20%!important}
+
+                                    &.swiper-slide-active{
+                                        height: 80vh;
+                                        width: 60%!important;
+                                        opacity: 1;
+
+                                        &:hover{
+                                            .zoom{
+                                                opacity: 1;
+                                                pointer-events: auto;
+                                                visibility: visible
+                                            }
+                                        }
+                                    }
+
+                                    .image{
+                                        width: 100%;
+                                        height: 100%;
+
+                                        img{
+                                            width: 100%;
+                                            height: 100%;
+                                            display: block;
+                                            object-fit: cover
+                                        }
+                                    }
+
+                                    .overlay{
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        z-index: 2;
+                                        width: 100%;
+                                        height: auto;
+                                        padding: 50px 50px 30px 50px;
+                                        background: rgb(0,0,0);
+                                        background: linear-gradient(0deg, rgba(0,0,0, .8) 0%, rgba(0,0,0, .4) 50%, rgba(0,0,0,0) 100%);
+                                        display: flex;
+                                        align-items: center;
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        transition: all .3s ease-out;
+
+                                        &.show{
+                                            opacity: 1;
+                                            visibility: visible;
+
+                                            .text-wrap{
+                                                opacity: 1;
+                                                visibility: visible;
+                                                transform: translateY(0)
+                                            }
+                                        }
+
+                                        .text-wrap{
+                                            display: flex;
+                                            flex-direction: column;
+                                            max-width: 600px;
+                                            opacity: 0;
+                                            visibility: hidden;
+                                            transform: translateY(50px);
+                                            transition: all .4s linear;
+
+                                            .name{
+                                                span{
+                                                    font-size: 2.2em;
+                                                    font-weight: 700;
+                                                }
+                                            }
+
+                                            .caption{
+                                                p{
+                                                    font-size: 1.16em;
+                                                    color: #fff;
+                                                    line-height: 1.7;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .swiper-next-button,
+                        .swiper-prev-button{
+                            position: absolute;
+                            z-index: 99;
+                            outline: none;
+                            transition: all .2s linear;
+                            width: 20%;
+                            height: 50vh;
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            cursor: pointer;
+
+                            &.swiper-button-disabled{opacity: .2}
+
+                            em{
+                                font-size: 68px
+                            }
+                        }
+
+                        .swiper-next-button{
+                            right: 0;
+                            padding-left: 5vw;
+                            justify-content: flex-start
+                        }
+
+                        .swiper-prev-button{
+                            left: 0; 
+                            padding-right: 5vw
+                        }
+                    }
+
+                    &.thumb{
+                        position: relative;
+                        width: 100%;
+                        max-width: 1020px;
+                        margin: 0 auto;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 12px;
+
+                        .swiper-container{
+                            width: 100%;
+                            .swiper-wrapper{
+                                .swiper-slide{
+                                    position: relative;
+                                    height: 10vh;
+                                    box-sizing: border-box;
+                                    cursor: pointer;
+                                    
+                                    &.swiper-slide-thumb-active{
+                                        .image{
+                                            box-shadow: inset 0px 0px 0px 2px $primary-color;
+                                            padding: 2px;
+
+                                            .overlay{opacity: 1}
+                                        }
+                                    }
+
+                                    .image{
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+
+                                        img{
+                                            width: 100%;
+                                            height: 100%;
+                                            display: block;
+                                            object-fit: cover;
+                                        }
+
+                                        .overlay{
+                                            position: absolute;
+                                            left: 2px;
+                                            top: 2px;
+                                            background-color: rgba($secondary-color, .6);
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            color: #fff;
+                                            width: calc(100% - 4px);
+                                            height: calc(100% - 4px);
+                                            opacity: 0;
+                                            transition: all .2s linear
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .swiper-next-button{right: -15px}
+                        .swiper-prev-button{left: -5px;
+                            em{transform: rotate(180deg)}
+                        }
+
+                        .swiper-next-button,
+                        .swiper-prev-button{
+                            position: absolute;
+                            z-index: 99;
+                            outline: none;
+                            transition: all .2s linear;
+                            width: 32px;
+                            height: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: $primary-color;
+                            cursor: pointer;
+
+                            &:hover{
+                                background-color: darken($primary-color, 10%);
+                            }
+
+                            &.swiper-button-disabled{opacity: .2}
+                        }
+                    }
+                }
+            }
+        }
+
+
+        /*signature*/
+
+        .signature{
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+
+            h3{
+                font-weight: 600;
+                font-size: .926em;
+                color: $primary-color;
+                display: flex;
+                margin-bottom: 5px
+            }
+
+            a,
+            em{
+                text-decoration: none;
+                color: #777;
+                margin-right: 5px;
+                font-size: .88em;
+                transition: all .2s linear;
+
+                &:hover{
+                    color: #aaa
+                }
+            }
+        }
+
+        /*Mobile*/
+        @media only screen and (max-width: 1024px){
+            .gallery-wrapper{
+                .content{
+                    padding: 5vh 0;
+
+                    .gallery{
+                            &.full{
+                                .swiper-container{
+                                    .swiper-wrapper{
+                                        height: 70vh;
+                                        
+                                        .swiper-slide{
+                                                height: 50vh;
+
+                                                &.swiper-slide-prev,
+                                                &.swiper-slide-next{width: 10%!important}
+
+                                                &.swiper-slide-active{
+                                                    height: 70vh;
+                                                    width: 80%!important
+                                                }
+
+                                                .overlay{
+                                                    padding: 20px;
+            
+                                                    .text-wrap{
+                                                        transform: translateY(0);
+            
+                                                        .name{
+                                                            span{
+                                                                    font-size: 1.6em
+                                                            }
+                                                        }
+            
+                                                        .caption{
+                                                            p{
+                                                                    font-size: 1.06em
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                        }
+                                    }
+                                }
+
+                                .swiper-next-button,
+                                .swiper-prev-button{
+                                    width: 10%;
+                                    height: 50vh;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    em{
+                                        font-size: 45px
+                                    }
+                                }
+
+                                .swiper-next-button{padding-left: 0}
+                                .swiper-prev-button{padding-right: 0}
+                            }
+
+                            &.thumb{
+                                padding: 0 30px;
+                                        max-width: 100%;
+                                .swiper-container{
+                                    .swiper-wrapper{
+                                        .swiper-slide{
+                                                height: 80px
+                                        }
+                                    }
+                                }
+
+                                .swiper-next-button{right: 10px}
+                                .swiper-prev-button{left: 10px}
+                            }
+                    }
+                }
+            }
+
+            .signature{display: none}
+        }
+</style>
 
 @endsection
 @section('content')
@@ -218,8 +622,129 @@
         <!-- Number of Student End -->
 
         <!-- Slider start -->
-        <div id="container-slider" class="container-xxl py-3">
-            <div class="container " >
+        <div id="container-slider"  class="container-fluid py-3 mt-5 " style="background-color: #ffefeb; max-height:600px ">
+        <div class="loader">
+            <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                <path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+                        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"/>
+                </path>
+            </svg>
+        </div>
+
+        <!--gallery-->
+        <div class="gallery-wrapper">
+            <div class="content">
+                <div class="gallery full" style="max-height: 500px">
+                        <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="height:500px">
+                                            <div class="image">
+                                                    <img  src="{{asset('img/partie/101.jpg')}}" alt="" />
+                                            </div>
+
+                                            <div class="overlay d-none">
+                                                    <div class="text-wrap">
+                                                        <div class="name">
+                                                                <span>Thumbnail Gallery</span>
+                                                        </div>
+                                                        <div class="caption">
+                                                                <p>
+                                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi aliquam eius, blanditiis quae, explicabo praesentium corporis tempora quam et rem nulla repellendus placeat, nisi omnis earum sunt suscipit aspernatur!
+                                                                </p>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    <div class="swiper-slide" style="height:500px">
+                                            <div class="image">
+                                                    <img  src="{{asset('img/partie/207.jpg')}}" alt="" />
+                                            </div>
+
+                                            <div class="overlay d-none">
+                                                    <div class="text-wrap">
+                                                        <div class="name">
+                                                                <span>Thumbnail Gallery</span>
+                                                        </div>
+                                                        <div class="caption">
+                                                                <p>
+                                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi aliquam eius, blanditiis quae, explicabo praesentium corporis tempora quam et rem nulla repellendus placeat, nisi omnis earum sunt suscipit aspernatur!
+                                                                </p>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    <div class="swiper-slide" style="height:500px">
+                                            <div class="image">
+                                                    <img  src="{{asset('img/partie/205.jpg')}}" alt="" />
+                                            </div>
+
+                                            <div class="overlay d-none">
+                                                    <div class="text-wrap">
+                                                        <div class="name">
+                                                                <span>Thumbnail Gallery</span>
+                                                        </div>
+                                                        <div class="caption">
+                                                                <p>
+                                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi aliquam eius, blanditiis quae, explicabo praesentium corporis tempora quam et rem nulla repellendus placeat, nisi omnis earum sunt suscipit aspernatur!
+                                                                </p>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="swiper-next-button">
+                                <em class="material-icons"><i class="fas fa-angle-right"></i></em>
+                        </div>
+                        <div class="swiper-prev-button">
+                                <em class="material-icons"><i class="fas fa-angle-left "></i></em>
+                        </div>
+                </div>
+
+                <div class="gallery thumb d-none">
+                        <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="height:500px">
+                                            <div class="image">
+                                                    <img src="https://images.pexels.com/photos/3663038/pexels-photo-3663038.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+
+                                                    <div class="overlay">
+                                                        <em class="material-icons">remove_red_eye</em>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                            <div class="image">
+                                                    <img src="https://images.pexels.com/photos/3551207/pexels-photo-3551207.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+
+                                                    <div class="overlay">
+                                                        <em class="material-icons">remove_red_eye</em>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                            <div class="image">
+                                                    <img src="https://images.pexels.com/photos/3375493/pexels-photo-3375493.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+
+                                                    <div class="overlay">
+                                                        <em class="material-icons">remove_red_eye</em>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="swiper-next-button">
+                                <em class="material-icons">arrow_right_alt</em>
+                        </div>
+                        <div class="swiper-prev-button">
+                                <em class="material-icons">arrow_right_alt</em>
+                        </div>
+                </div>
+            </div>
+        </div>
+            {{-- <div class="container" >
                 <div id="carousel" style="height:500px"> 
                     <img src="{{asset('img/classes-1.jpg')}}" style="border-radius: 10px;" width="400px" id="item-3" /> 
                     <img src="{{asset('img/classes-2.jpg')}}" style="border-radius: 10px;" width="400px" id="item-4" /> 
@@ -230,7 +755,7 @@
                 </div>
                 <a href="#" class="text-primary" id="prev">السابق</a>
                 <a href="#" class="text-primary" id="next">التالى</a>
-            </div>
+            </div> --}}
         </div>
         <!-- Slider End -->
 
@@ -415,7 +940,7 @@
                     <h1 class="mb-3">آراء أولياء الأمور</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item bg-light rounded p-5" style="direction: rtl">
+                    <div style="max-height:260px" class="testimonial-item bg-light rounded p-5" style="direction: rtl">
                         <p class="fs-5">خالص شكري على الدعم الذي قدم لابني أثناء تواجده في مدرسة لبنان الأولى. إنه يحب المدرسة وقضى وقتًا رائعًا في المدرسة مع معلميه وزملائه في الفصل..</p>
                         <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
                             <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('img/user.png')}}" style="width: 90px; height: 90px;">
@@ -426,7 +951,7 @@
                             <i class="fa fa-quote-left me-auto fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                         </div>
                     </div>
-                    <div class="testimonial-item bg-light rounded p-5" style="direction: rtl">
+                    <div style="max-height:260px" class="testimonial-item bg-light rounded p-5" style="direction: rtl">
                         <p class="fs-5"> أشعر بالامتنان من مدرسة لبنان الأولى وكل من تعاملت معهم أنا وابني.</p>
                         <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
                             <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('img/user.png')}}" style="width: 90px; height: 90px;">
@@ -437,7 +962,7 @@
                             <i class="fa fa-quote-left me-auto fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                         </div>
                     </div>
-                    <div class="testimonial-item bg-light rounded p-5" style="direction: rtl">
+                    <div style="max-height:260px" class="testimonial-item bg-light rounded p-5" style="direction: rtl">
                         <p class="fs-5">توفر مدرسة لبنان الأولى بيئة ممتازة ومهارات تعليمية لإعداد الطلاب ليصبحوا قادة المستقبل</p>
                         <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
                             <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('img/user.png')}}" style="width: 90px; height: 90px;">
@@ -463,6 +988,108 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="{{asset('js/jquery.waterwheelCarousel.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
+
+<script>
+    $(function(){
+    if($('.gallery-wrapper').length){
+        var galleryThumbs = new Swiper('.gallery-wrapper .content .gallery.thumb .swiper-container', {
+            speed: 900,
+            effect: 'slide',
+            spaceBetween: 12,
+            grabCursor: false,
+            simulateTouch: true,
+            loop: false,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            navigation: {
+                nextEl: '.gallery-wrapper .content .gallery.thumb .swiper-next-button',
+                prevEl: '.gallery-wrapper .content .gallery.thumb .swiper-prev-button',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                414: {
+                    slidesPerView: 3,
+                    spaceBetween: 10
+                },
+                768: {
+                    slidesPerView: 5,
+                    spaceBetween: 10
+                },
+                1024: {
+                    slidesPerView: 7,
+                    spaceBetween: 10
+                }
+            },
+			  on: {
+				  init: function() { 
+				  	let containerThumbWidth = $('.gallery-wrapper .content .gallery.thumb').outerWidth();
+	
+	let totalThumbWidth = 0;
+	
+	$('.gallery.thumb .swiper-container .swiper-wrapper .swiper-slide').each(function(){
+		let thumbWidth = $(this).outerWidth();
+		totalThumbWidth += thumbWidth
+	});
+	
+	
+	
+	if(totalThumbWidth < containerThumbWidth){
+		$('.gallery.thumb .swiper-next-button, .gallery.thumb .swiper-prev-button').addClass('hide');
+	}else{
+		$('.gallery.thumb .swiper-next-button, .gallery.thumb .swiper-prev-button').removeClass('hide');
+	}
+			   }
+			  }
+        });
+
+        var galleryFull = new Swiper('.gallery-wrapper .content .gallery.full .swiper-container', {
+            speed: 900,
+            effect: 'slide',
+            slidesPerView: 3,
+            spaceBetween: 0,
+            centeredSlides: true,
+            autoplay: {
+                delay: 7000,
+                disableOnInteraction: false,
+                stopOnLastSlide: false
+            },
+            keyboard: {
+                enabled: true,
+            },
+            grabCursor: false,
+            simulateTouch: false,
+            loop: true,
+            navigation: {
+                nextEl: '.gallery-wrapper .content .gallery.full .swiper-next-button',
+                prevEl: '.gallery-wrapper .content .gallery.full .swiper-prev-button',
+            },
+            thumbs: {
+                swiper: galleryThumbs
+            },
+            on: {
+                slideChangeTransitionStart: function () {
+                    $('.gallery-wrapper .content .gallery.full .swiper-slide .overlay').removeClass('show');
+                },
+                slideChangeTransitionEnd: function () {
+                    $('.gallery-wrapper .content .gallery.full .swiper-slide-active .overlay').addClass('show');
+                }
+            }
+        });
+    }
+});
+
+
+$(window).on("load", function() {
+    setTimeout(function(){
+        $('.loader').fadeOut();
+    }, 1000);
+});
+</script>
 
     <script>
         $(document).ready(function () {
