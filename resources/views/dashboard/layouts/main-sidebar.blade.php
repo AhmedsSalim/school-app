@@ -33,7 +33,9 @@
                         <a href="{{route('slider.index')}}"><i class="ti-menu-alt"></i><span class="right-nav-text">شريط التمرير</span> </a>
                     </li>
 
-
+                    <li>
+                        <a href="{{route('setting.index')}}"><i class="ti-settings"></i><span class="right-nav-text">الإعدادات</span> </a>
+                    </li>
 
                 </ul>
             </div>

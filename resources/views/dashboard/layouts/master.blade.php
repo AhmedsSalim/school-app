@@ -8,8 +8,9 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    @include('dashboard.layouts.head')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @include('dashboard.layouts.head')
 
 </head>
 

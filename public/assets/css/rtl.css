@@ -15242,7 +15242,7 @@ button.toast-close-button {
 
 .toast-top-left {
   top: 12px;
-  left: 12px; }
+  right: 12px; }
 
 .toast-top-right {
   top: 12px;

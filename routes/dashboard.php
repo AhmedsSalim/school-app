@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\SettingController;
 use App\Http\Controllers\Dashboard\SliderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -25,6 +26,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('slider', SliderController::class);
+
+Route::get('/setting/index', [SettingController::class , 'index'])->name('setting.index');
+Route::put('/setting/update', [SettingController::class , 'update'])->name('settings.update');
 
 
 

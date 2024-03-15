@@ -185,7 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        nilsenj\Toastr\ToastrServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -210,6 +210,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Toastr'          => 'nilsenj\Toastr\Facades\Toastr',
     ])->toArray(),
 
 ];

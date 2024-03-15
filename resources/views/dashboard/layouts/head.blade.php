@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&family=Mukta:wght@600&family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
 @yield('css')
 <!--- Style css -->
+<link href="{{ URL::asset('css/toastr.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('assets/css/style.css') }}" rel="stylesheet">
 
 <!--- Style css -->
@@ -19,4 +20,10 @@
     <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">
 @else --}}
     <link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet">
+
+    <style>
+        .is-invalid{
+            border: 1px solid red;
+        }
+    </style>
 {{-- @endif --}}

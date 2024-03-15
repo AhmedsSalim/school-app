@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8374ddb07785f236ebf8bc6b08d36957",
+    "content-hash": "67055908acafd3d9dc014e78355821de",
     "packages": [
         {
             "name": "brick/math",
@@ -2291,6 +2291,60 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.0"
             },
             "time": "2024-01-07T17:17:35+00:00"
+        },
+        {
+            "name": "nilsenj/toastr-5.1-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nilsenj/toastr-5.1-laravel.git",
+                "reference": "fd6681000b55fb6b482a3ef21f22836d663cdbca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/fd6681000b55fb6b482a3ef21f22836d663cdbca",
+                "reference": "fd6681000b55fb6b482a3ef21f22836d663cdbca",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": ">=5.0.0",
+                "illuminate/support": ">=5.0.0",
+                "php": ">=5.4.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "nilsenj\\Toastr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamal Nasser",
+                    "email": "kamal@kamalnasser.net"
+                },
+                {
+                    "name": "Ivan Nikolenko",
+                    "email": "nikoleivan@gmail.com"
+                }
+            ],
+            "description": "toastr.js for Laravel 5.1/5.2 easy notification like growl for example",
+            "homepage": "https://github.com/nilsenj/toastr-5.1-laravel",
+            "keywords": [
+                "laravel",
+                "notification",
+                "php",
+                "toastr"
+            ],
+            "support": {
+                "issues": "https://github.com/nilsenj/toastr-5.1-laravel/issues",
+                "source": "https://github.com/nilsenj/toastr-5.1-laravel/tree/master"
+            },
+            "time": "2016-03-13T02:03:53+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -8526,7 +8580,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nilsenj/toastr-5.1-laravel": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

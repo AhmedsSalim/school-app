@@ -4,8 +4,8 @@
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6">
                         <h3 class="text-white mb-4">تواصل معنا</h3>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt ms-3"></i>العين - فلج هزاع - شارع المدارس</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt ms-3"></i>+97137806780</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt ms-3"></i>{{App\Models\Setting::first()->address}}</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt ms-3"></i>{{App\Models\Setting::first()->phone}}</p>
                         {{-- <p class="mb-2"><i class="fa fa-envelope ms-3"></i>info@example.com</p> --}}
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
