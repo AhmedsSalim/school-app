@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\HomePageController;
 use App\Http\Controllers\dashboard\SettingController;
 use App\Http\Controllers\Dashboard\SliderController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/home-page', [HomePageController::class , 'index'])->name('home-page');
 
 Route::resource('slider', SliderController::class);
 
